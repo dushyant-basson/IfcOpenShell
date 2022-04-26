@@ -44,6 +44,8 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowTitle(tr("IfcOpenShell QT Viewer"));
 }
 
+MainWindow::~MainWindow() {}
+
 void MainWindow::openFile(const QString &path)
 {
     QString fileName;
