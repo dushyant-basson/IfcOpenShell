@@ -13,13 +13,13 @@ int main(int argc, char **argv)
 
 	//QGLViewer viewer;
 
-   // Restore the previous viewer state.
-   //viewer.restoreStateFromFile();
+    // Restore the previous viewer state.
+    //viewer.restoreStateFromFile();
 
     MainWindow window;
     //window.openFile("	");
 
-  window.show();
+    window.show();
 
-  return app.exec();
+    return app.exec();
 }

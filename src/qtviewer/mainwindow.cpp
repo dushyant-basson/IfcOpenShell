@@ -1,25 +1,23 @@
-﻿
-
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
+//#include "ui_mainwindow.h"
 #include <math.h>
 
 #include <QtGui>
 
-MainWindow::MainWindow()
-    : QMainWindow()
+MainWindow::MainWindow(QWidget *parent) : 
+    QMainWindow(parent)
 {
 
-
+    /*
 	IfcGeomObjects::Settings(IfcGeomObjects::USE_WORLD_COORDS,true);
 	IfcGeomObjects::Settings(IfcGeomObjects::WELD_VERTICES,false);
     IfcGeomObjects::Settings(IfcGeomObjects::SEW_SHELLS,true);
-
-
+    */
 
     QMenu *fileMenu = new QMenu(tr("&File"), this);
     QAction *openAction = fileMenu->addAction(tr("&Open..."));
     openAction->setShortcut(QKeySequence(tr("Ctrl+O")));
-    QAction *quitAction = fileMenu->addAction(tr("E&xit"));
+    QAction *quitAction = fileMenu->addAction(tr("&Exit"));
     quitAction->setShortcuts(QKeySequence::Quit);
 
     menuBar()->addMenu(fileMenu);
@@ -65,12 +63,14 @@ void MainWindow::openFile(const QString &path)
             m_backgroundAction->setEnabled(false);
             return;
         }
+        /*
 		std::stringstream ss;
     	if ( ! IfcGeomObjects::Init(fileName.toStdString(),&std::cout,&ss) ) {
     			QMessageBox::critical(this, tr("Open IFC"),
     			                           QString("[Error] unable to parse file '%1'. Or no geometrical entities found" ).arg(fileName));
     			return;
     	}
+        */
 
     	//connect((QWidget*)m_view, SIGNAL(drawNeeded()), this, SLOT(drawIfcObject()));
 
@@ -86,12 +86,13 @@ void MainWindow::openFile(const QString &path)
     }
 }
 
-
+/*
 void MainWindow::draw()
 {
 
 
 
 }
+*/
 
 
